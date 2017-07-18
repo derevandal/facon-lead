@@ -1,7 +1,7 @@
-# My personal website
+# Facon Lead Colector
 
-[![Build Status](https://travis-ci.org/derevandal/derevandal.github.io.svg?branch=master)](https://travis-ci.org/derevandal/derevandal.github.io)
-[![devDependencies Status](https://david-dm.org/derevandal/derevandal.github.io.svg)](https://david-dm.org/derevandal/derevandal.github.io?type=dev)
+[![Build Status](https://travis-ci.org/derevandal/facon-lead.svg?branch=master)](https://travis-ci.org/derevandal/facon-lead)
+[![devDependencies Status](https://david-dm.org/derevandal/facon-lead.svg)](https://david-dm.org/derevandal/facon-lead?type=dev)
 
 ## Stack
 
@@ -24,7 +24,7 @@ $ npm install -g gulp-cli
 **2 -** Clone the project and install the dependencies:
 
 ```sh
-git clone https://github.com/derevandal/derevandal.github.io.git
+git clone https://github.com/derevandal/facon-lead.git
 cd ddpmga.github.io
 npm install
 ```
@@ -57,7 +57,7 @@ $ gulp server
 To keep better organization of releases we follow the [Semantic Versioning 2.0.0](http://semver.org/) guidelines.
 
 ## Contributing
-Find on our [roadmap](https://github.com/derevandal/derevandal.github.io/issues/) the next steps of the project ;)
+Find on our [roadmap](https://github.com/derevandal/facon-lead/issues/) the next steps of the project ;)
 Want to contribute? [Follow these recommendations](CONTRIBUTING.md).
 
 ## License
