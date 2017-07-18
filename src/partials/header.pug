@@ -1,0 +1,24 @@
+header.header.container
+    a(href="/").header__logo
+        h1 FACON
+    menu.header__menu
+        li.header__item
+            if actived == 'pos'
+                a(href="/pos-graduacao.html").header__link.actived Pós-graduação
+            else
+                a(href="/projects.html").header__link Pós-graduação
+        li.header__item
+            if actived == 'extensao'
+                a(href="/about.html").header__link.actived Extensão
+            else 
+                a(href="/about.html").header__link Extensão
+        li.header__item
+            if actived == 'aperfeicoamento'
+                a(href="/contact.html").header__link.actived Aperfeiçoamento
+            else 
+                a(href="/contact.html").header__link Aperfeiçoamento
+        li.header__item
+            if actived == 'contact'
+                a(href="/contact.html").header__link.actived Inscreva-se
+            else 
+                a(href="/contact.html").header__link Inscreva-se
