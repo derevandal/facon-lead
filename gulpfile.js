@@ -24,36 +24,36 @@ const $ = {
 
 const basePaths = {
     src: 'src/'
-    , dest: './docs'
+    , dest: 'docs/'
     , assetsSrc: 'src/assets/'
-    , assetsDest: 'docs/assets/'
+    , assetsDest: 'assets/'
 }
 
 const Paths = {
     images: {
         loader: [basePaths.src + 'assets/img/**/*.*', '!' + basePaths.src + 'assets/img/background-*.jpg']
-        , dest: basePaths.dest + 'assets/img/'
+        , dest: 'docs/assets/img/'
         , watch: [basePaths.src + 'assets/img/**/*.*']
     }
     , sprite: {
         loader: basePaths.src + 'icons/*.svg'
-        , dest: basePaths.assetsDest + 'img/sprite.svg'
+        , dest: 'assets/img/sprite.svg'
         , watch: [basePaths.src + 'icons/*.svg']
     }
     , pug: {
         loader: basePaths.src + '*.pug'
-        , dest: basePaths.dest
+        , dest: 'docs/'
         , watch: [basePaths.src + '*.pug', basePaths.src + 'partials/*.pug', basePaths.src + 'layouts/*.pug']
     }
     , stylus: {
         loader: 'src/assets/styles/style.styl'
         , loaderPartials: 'src/assets/styles/partials/*.styl'
-        , dest: basePaths.assetsDest + 'styles/'
+        , dest: 'docs/assets/styles/'
         , watch: [basePaths.assetsSrc + 'styles/*.styl', basePaths.assetsSrc + 'styles/partials/*.styl']
     }
     , javascript: {
         loader: basePaths.assetsSrc + 'scripts/*.js'
-        , dest: basePaths.assetsDest + 'scripts/'
+        , dest: 'docs/assets/scripts/'
         , watch: [basePaths.assetsSrc + 'scripts/*.js']
     }
 }
@@ -102,7 +102,9 @@ const Config = {
     }
     , browserSync: {
         init: {
-            server: Paths.dest
+            server: {
+                baseDir: './docs/'
+            }
             , open: false
         }
     }
@@ -124,14 +126,14 @@ gulp.task('pug', () => {
 gulp.task('stylus', () => {
     gulp.src(Paths.stylus.loader)
         .pipe($.plumber())
-        // .pipe($.sourcemaps.init())
+        .pipe($.sourcemaps.init())
         .pipe($.stylus(Config.stylus))
         .pipe($.cssmin())
-        // .pipe($.sourcemaps.write())
+        .pipe($.sourcemaps.write())
         .pipe($.rename({suffix: '.min'}))
         .pipe($.eol('\r\n'))
         .pipe($.plumber.stop())
-        .pipe(gulp.dest('./assets/styles/'))
+        .pipe(gulp.dest('./docs/assets/styles/'))
         .pipe($.browserSync.stream())
 })
 
@@ -168,7 +170,7 @@ gulp.task('svgsprite', () => {
         .pipe($.plumber())
         .pipe($.svgSprite(Config.svgconfig))
         .pipe($.plumber.stop())
-        .pipe(gulp.dest(basePaths.dest))
+        .pipe(gulp.dest('./'))
 })
 
 gulp.task('responsive', () => {
