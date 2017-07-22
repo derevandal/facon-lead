@@ -126,10 +126,10 @@ gulp.task('pug', () => {
 gulp.task('stylus', () => {
     gulp.src(Paths.stylus.loader)
         .pipe($.plumber())
-        .pipe($.sourcemaps.init())
+        // .pipe($.sourcemaps.init())
         .pipe($.stylus(Config.stylus))
         .pipe($.cssmin())
-        .pipe($.sourcemaps.write())
+        // .pipe($.sourcemaps.write())
         .pipe($.rename({suffix: '.min'}))
         .pipe($.eol('\r\n'))
         .pipe($.plumber.stop())

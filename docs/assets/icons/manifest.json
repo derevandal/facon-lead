@@ -1,0 +1,20 @@
+{
+    "name": "FACON",
+    "icons": [
+        {
+            "src": "/assets/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#1e3378",
+    "background_color": "#1e3378",
+    "start_url": "https://facon.idepead.com.br/?utm-source=adnroid-icon",
+    "display": "standalone",
+    "orientation": "portrait"
+}
