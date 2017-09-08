@@ -1,11 +1,9 @@
 .container
     display flex
-    width 100%
+    margin 0 auto
 
-// // Extra small devices (portrait phones, less than 576px)
+// Extra small devices (portrait phones, less than 576px)
 // @media (max-width: 575px)
-//     .superFold
-//         background-image url(../img/background-lasvegas-576px.jpg)
 // // 1.25dpi
 // @media (max-width: 575px) and (-webkit-max-device-pixel-ratio: 1.25) and (max-resolution: 120dpi)
 //     .superFold
@@ -24,6 +22,7 @@
 //         background-image url(../img/background-lasvegas-1728px.jpg)
 
 // @media (max-width: 767px)
+ 
 
 // // Small devices (landscape phones, 576px and up)
 // @media (min-width: 576px) and (max-width: 767px)
@@ -68,6 +67,48 @@
 //     .superFold
 //         background-image url(../img/background-lasvegas-2976px.jpg)
 
+@media (max-width: 900px)
+   .container
+        width 100%
+        flex-wrap wrap
+    .header__logo
+        width 250px
+    .menuicon
+        display block
+        opacity 1
+    .header__menu
+        position absolute
+        width 250px
+        padding 0
+        transform translate(-255px, 0)
+        flex-wrap wrap
+        transition transform .3s ease-out
+    .header__item
+        width 100%
+    .header__link
+        width 100%
+        padding 10px 0
+        background $color__yellow1
+        color $color__purple3
+        &:hover
+            background-color $color__purple3
+            color $color__yellow1
+    .header__button
+        width 100%
+        justify-content center
+        color $color__yellow1
+        background $color__purple3
+        box-shadow none
+        border-radius 0 0 5px 5px
+        &:hover, &:active, &:focus
+            transform none
+            box-shadow none
+            background $color__yellow1
+            color $color__purple3
+            font-weight bold
+@media (min-width: 901px) and (max-width: 1200px)
+    .container
+        width 900px
 // @media (min-width: 767px) and (max-width: 1200px)
 
 // // Large devices (desktops, 992px and up)
@@ -92,24 +133,10 @@
 //         background-image url(../img/background-lasvegas-3600px.jpg)
 
 
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px)
-//     .superFold
-//         background-image url(../img/background-lasvegas-1920px.jpg)
-// // 1.25dpi
-// @media (min-width: 1200px) and (-webkit-max-device-pixel-ratio: 1.25) and (max-resolution: 120dpi)
-//     .superFold
-//         background-image url(../img/background-lasvegas-2400px.jpg)
-// // 1.5dpi
-// @media (min-width: 1200px) and (-webkit-max-device-pixel-ratio: 1.5) and (max-resolution: 144dpi)
-//     .superFold
-//         background-image url(../img/background-lasvegas-2880px.jpg)
-// // 2dpi
-// @media (min-width: 1200px) and (-webkit-max-device-pixel-ratio: 2) and (max-resolution: 192dpi)
-//     .superFold
-//         background-image url(../img/background-lasvegas-3840px.jpg)
-// // 3dpi
-// @media (min-width: 1200px) and (-webkit-max-device-pixel-ratio: 3) and (max-resolution: 328dpi)
-//     .superFold
-//         background-image url(../img/background-lasvegas-5760px.jpg)
-        
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px)
+    .container
+        display flex
+        margin 0 auto
+        width 1200px
+        justify-content space-between

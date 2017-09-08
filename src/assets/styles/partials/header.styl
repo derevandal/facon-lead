@@ -1,0 +1,102 @@
+.header
+    width 100%
+    background $color__purple3
+    
+.header__logo
+    width 300px
+    height 80px
+    text-indent -9999px
+    background url('../img/logo-white.svg') center center no-repeat
+    border 5px solid transparent
+    transition .2s all
+    &:hover
+        background-color $color__white
+        background-image url('../img/logo.svg')
+.header__menu
+    display flex
+    list-style none
+    justify-content space-between
+    margin 0
+    z-index 2
+.header__item
+    display flex
+.header__link
+    display flex
+    justify-content center
+    align-items center
+    padding 0 2em
+    text-decoration none
+    color $color__white
+    font-size 1.5em
+    line-height 1.5em
+    text-transform uppercase
+    transition all ease .2s
+    &:hover
+        color $color__yellow1
+    &:before
+        background $color__yellow1
+.header__button
+    align-self center
+    font-size 1.5em
+    line-height 1.5em
+    text-transform uppercase
+    background-color $color__yellow2
+    box-shadow inset 0 -1px 1px rgba(255, 255, 255, .15), 0 4px 0 $color__yellow3
+    &:hover
+        box-shadow inset 0 -1px 1px rgba(255, 255, 255, .15), 0 2px 0 $color__yellow3
+        color black
+    &:active,
+    &:focus
+        box-shadow inset 0 3px 3px rgba(0, 0, 0, .15), 0 2px 0 $color__yellow3
+        color white
+        
+/* Configuration Parameters */
+$lineWidth = 4px
+$lineLength = 35px
+$baseMargin = 8px
+$animationDuration = .2s
+#hamburger
+  display none
+.menuicon
+    display none
+    cursor pointer
+    height ($baseMargin * 2 + $lineWidth)
+    width $lineLength
+    opacity 0
+    margin auto 10px auto auto
+    align-self center
+    transition ease all .2s
+    span
+        display block
+        top $baseMargin
+        width $lineLength
+        height $lineWidth
+        background-color $color__white
+        position relative
+        transition $animationDuration ease all
+        &::after, &::before
+            display block
+            content " "
+            position absolute
+            width $lineLength
+            height $lineWidth
+            background-color $color__white
+            transition-duration $animationDuration
+            transition-delay $animationDuration, 0
+        &::before
+            margin-top -1*$baseMargin
+        &::after
+            margin-top $baseMargin
+#hamburger:checked ~ .header__menu
+    transform translate(0, 0)
+#hamburger:checked ~ .menuicon
+  span
+    background-color transparent
+    &::before, &::after
+        background-color $color__yellow1
+        margin-top 0
+        transition-delay 0, $animationDuration
+    &::before
+        transform rotate(45deg)
+    &::after
+        transform rotate(-45deg)
